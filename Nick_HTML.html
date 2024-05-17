@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Subaru Mansour</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        header {
+            background: linear-gradient(to bottom, #ffffff, #a8a8a8);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #ff5252;
+            background: -webkit-linear-gradient(#ff5252, #b71c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+        nav a {
+            color: #ff5252;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #b71c1c;
+        }
+        main {
+            flex: 1;
+            z-index: 1;
+            overflow: auto;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e1e1e;
+        }
+        .project {
+            margin-bottom: 20px;
+        }
+        .project img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <h1>Nicholas Subaru Mansour</h1>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#projects">Project Hub</a>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Nick Mansour, an engineering intern with a passion for tinkering with electronics, 3D printing, and bouldering. Welcome to my personal webpage where you can learn more about my interests, projects, and professional journey.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Coming soon: A showcase of my professional and personal projects.</p>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Coming soon: Insights and updates on my latest endeavors and interests.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at:</p>
+            <ul>
+                <li>Email: placeholder@example.com</li>
+                <li>Phone: (123) 456-7890</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com" style="color: #ff5252;">LinkedIn Profile</a></li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Project Hub</h2>
+            <div class="project">
+                <h3>Spot Welder</h3>
+                <img src="20240308_181212.jpg" alt="Spot Welder Project">
+                <p>Details about the Spot Welder project will be added soon.</p>
+            </div>
+            <p>More projects coming soon.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nick Mansour. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ff5252"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ff5252",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: false,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: false,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
