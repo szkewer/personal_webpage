@@ -16,6 +16,10 @@
             min-height: 100vh;
             position: relative;
         }
+        #container {
+        	max-width: 900px;
+            margin: 0 auto;
+        }
         #particles-js {
             position: fixed;
             width: 100%;
@@ -35,9 +39,12 @@
             -webkit-text-fill-color: transparent;
             font-size: 3em;
         }
+        h2,strong {
+        	color: #ff5252;
+        }
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             background-color: #1e1e1e;
             padding: 10px;
         }
@@ -58,43 +65,33 @@
         }
         section {
             padding: 20px;
-            margin: 20px;
+            margin: 10px 0px;
             background: #1e1e1e;
-            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1e1e1e;
-        }
-        .project {
-            margin-bottom: 20px;
-        }
-        .project img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            margin: 50 50px;
         }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
+    <div id="container">
     <header>
         <h1>Nicholas Subaru Mansour</h1>
     </header>
     <nav>
-    	<a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="blog.html">Blog</a>
-        <a href="projects.html">Project Hub</a>
-        <a href="contact.html">Contact</a>
+    	<a href="home">Home</a>
+        <a href="portfolio">Portfolio</a>
+        <a href="blog">Blog</a>
+        <a href="contact">Contact</a>
+        <a href="projects">Project Hub</a>
     </nav>
     <main>
         <section id="about">
-            <h2>About Me</h2>
+            <h2>Welcome to my Webpage!</h2>
+            <p><strong>About Me</strong></p>
             <p>Hello! I'm Nicholas Mansour, an engineering intern with a passion for tinkering with electronics, 3D printing, and bouldering. Welcome to my personal webpage where you can learn more about my interests, projects, and professional journey.</p>
         </section>
     </main>
@@ -106,7 +103,7 @@
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: 80,
+                    value: 200,
                     density: {
                         enable: true,
                         value_area: 800
