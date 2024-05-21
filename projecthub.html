@@ -17,7 +17,7 @@
             position: relative;
         }
         #container {
-        	max-width: 900px;
+            max-width: 900px;
             margin: 0 auto;
         }
         #particles-js {
@@ -39,8 +39,8 @@
             -webkit-text-fill-color: transparent;
             font-size: 3em;
         }
-        h2,strong {
-        	color: #ff5252;
+        h2, strong {
+            color: #ff5252;
         }
         nav {
             display: flex;
@@ -69,12 +69,35 @@
             background: #1e1e1e;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+        .thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .thumbnail {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .thumbnail img {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .thumbnail p {
+            margin: 10px 0 0 0;
+            color: #f5f5f5;
+        }
         footer {
             text-align: left;
             color: #a8a8a8;
         }
         img {
             object-fit: cover;
+            display: block;
             width: 100%;
             height: 100%;
         }
@@ -83,30 +106,53 @@
 <body>
     <div id="particles-js"></div>
     <div id="container">
-    <header>
-        <h1>Nicholas Subaru Mansour</h1>
-    </header>
-    <nav>
-        <a href="index">Home</a>
-        <a href="portfolio">Portfolio</a>
-        <a href="blog">Blog</a>
-        <a href="projects">Project Hub</a>
-        <a href="contact">Contact</a>
-    </nav>
-    <main>
-        <section id="projects">
-            <h2>Project Hub</h2>
-            <div class="project">
-                <h3>Spot Welder</h3>
-                <img src="media/20240308_181212.jpg" alt="Spot Welder Project">
-                <p>Details about the Spot Welder project will be added soon.</p>
-            </div>
-            <p>More projects coming soon.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Nicholas Mansour. All rights reserved.</p>
-    </footer>
+        <header>
+            <h1>Nicholas Subaru Mansour</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="projects.html">Project Hub</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <main>
+            <section id="projects">
+                <h2>Project Hub</h2>
+                <div class="thumbnails">
+                    <div class="thumbnail">
+                        <a href="spot_welder.html">
+                            <img src="C:\Users\nicho\Downloads\Website\20240308_181212.jpg" alt="Spot Welder">
+                        </a>
+                        <p>Spot Welder</p>
+			            <p>November 14, 2023</p>
+                    </div>
+                    <div class="thumbnail">
+                        <a href="project2.html">
+                            <img src="media/project2_thumbnail.jpg" alt="Project 2">
+                        </a>
+                        <p>Project 2</p>
+                    </div>
+                    <div class="thumbnail">
+                        <a href="project3.html">
+                            <img src="media/project3_thumbnail.jpg" alt="Project 3">
+                        </a>
+                        <p>Project 3</p>
+                    </div>
+                    <div class="thumbnail">
+                        <a href="project4.html">
+                            <img src="media/project4_thumbnail.jpg" alt="Project 4">
+                        </a>
+                        <p>Project 4</p>
+                    </div>
+                </div>
+                <p>More projects coming soon.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Nicholas Mansour. All rights reserved.</p>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles-js', {
