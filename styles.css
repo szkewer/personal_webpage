@@ -24,6 +24,18 @@ body {
     left: 0;
 }
 
+a:link {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+}
+  
+a:hover {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
 header {
     padding: 20px;
     text-align: center;
@@ -39,6 +51,10 @@ header h1 {
 
 h2,strong {
     color: #ff5252;
+}
+
+p {
+    line-height: 1.8;
 }
 
 nav {
@@ -101,6 +117,13 @@ section {
 footer {
     text-align: left;
     color: #a8a8a8;
+}
+
+figcaption {
+color: white;
+font-style: italic;
+padding: 2px;
+text-align: center;
 }
 
 img {
