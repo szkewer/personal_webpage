@@ -29,11 +29,11 @@ a:link {
     background-color: transparent;
     text-decoration: none;
 }
-  
+
 a:hover {
-color: red;
-background-color: transparent;
-text-decoration: underline;
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 header {
@@ -49,11 +49,15 @@ header h1 {
     font-size: 3em;
 }
 
-h2,strong {
+h2, strong {
+    display: block;
+    padding: 10px;
+    font-size: 1.5em;
     color: #ff5252;
 }
 
 p {
+    padding: 10px;
     line-height: 1.8;
 }
 
@@ -75,6 +79,7 @@ nav a {
 nav a:hover {
     color: #b71c1c;
 }
+
 main {
     flex: 1;
     z-index: 1;
@@ -120,15 +125,25 @@ footer {
 }
 
 figcaption {
-color: white;
-font-style: italic;
-padding: 2px;
-text-align: center;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
 }
 
 img {
+    padding: 10px;
+    text-align: center;
     object-fit: cover;
     display: block;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.centered-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
