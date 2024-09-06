@@ -147,3 +147,29 @@ img {
     align-items: center;
     flex-direction: column;
 }
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.skills-list {
+    flex: 1;
+    list-style-type: none;
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.skills-list h2 {
+    margin-top: 0;
+    color: #ff5252;
+    text-align: center;
+}
+
+.skills-list li {
+    padding: 5px 0;
+    color: #f5f5f5;
+}
