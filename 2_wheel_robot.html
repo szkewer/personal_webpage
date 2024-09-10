@@ -44,69 +44,68 @@
             <pre><code class="language-cpp">// Include libraries
             #include <SparkFun_TB6612.h>
             #include <IRremote.h>
+// Set digital pin for IR receiver
+int IRpin = 2;
+IRrecv IR(IRpin);
+decode_results cmd;
+String com;
 
-            // Set digital pin for IR receiver
-            int IRpin = 2;
-            IRrecv IR(IRpin);
-            decode_results cmd;
-            String com;
+// Define hex codes of IR remote for each control task
+#define FORWARD       0xFFA857
+#define BACKWARD      0xFF8877
+#define LEFT          0xFF08F7
+#define RIGHT         0xFF48B7
+#define STOP          0xFF02FD
+#define LED_ON        0xFF3AC5
+#define LED_OFF       0xFFBA45
 
-            // Define hex codes of IR remote for each control task
-            #define FORWARD       0xFFA857
-            #define BACKWARD      0xFF8877
-            #define LEFT          0xFF08F7
-            #define RIGHT         0xFF48B7
-            #define STOP          0xFF02FD
-            #define LED_ON        0xFF3AC5
-            #define LED_OFF       0xFFBA45
+// Pins for all inputs, keep in mind the PWM defines must be on PWM pins
+#define AIN1 3
+#define BIN1 7
+#define AIN2 4
+#define BIN2 8
+#define PWMA 5
+#define PWMB 6
+#define STBY 9
 
-            // Pins for all inputs, keep in mind the PWM defines must be on PWM pins
-            #define AIN1 3
-            #define BIN1 7
-            #define AIN2 4
-            #define BIN2 8
-            #define PWMA 5
-            #define PWMB 6
-            #define STBY 9
+// these constants are used to allow you to make your motor configuration 
+// line up with function names like forward.  Value can be 1 or -1
+const int offsetA = 1;
+const int offsetB = 1;
 
-            // these constants are used to allow you to make your motor configuration 
-            // line up with function names like forward.  Value can be 1 or -1
-            const int offsetA = 1;
-            const int offsetB = 1;
+// Initializing motors.  The library will allow you to initialize as many
+// motors as you have memory for.  If you are using functions like forward
+// that take 2 motors as arguements you can either write new functions or
+// call the function more than once.
+Motor motor1 = Motor(AIN1, AIN2, PWMA, offsetA, STBY);
+Motor motor2 = Motor(BIN1, BIN2, PWMB, offsetB, STBY);
 
-            // Initializing motors.  The library will allow you to initialize as many
-            // motors as you have memory for.  If you are using functions like forward
-            // that take 2 motors as arguements you can either write new functions or
-            // call the function more than once.
-            Motor motor1 = Motor(AIN1, AIN2, PWMA, offsetA, STBY);
-            Motor motor2 = Motor(BIN1, BIN2, PWMB, offsetB, STBY);
-
-            void setup()
-            {
-            Serial.begin(9600);
-            IR.enableIRIn();
-            }
+void setup()
+{
+Serial.begin(9600);
+IR.enableIRIn();
+}
 
 
-            void loop()
-            {
-            // Read IR receiver data
-            while(IR.decode(&cmd) == 0) {
-            }
-            Serial.println(cmd.value, HEX);
-            delay(250);
-            IR.resume();
+void loop()
+{
+// Read IR receiver data
+while(IR.decode(&cmd) == 0) {
+}
+Serial.println(cmd.value, HEX);
+delay(250);
+IR.resume();
 
-            // button inputs from controller mapped to motor movement
-            switch(cmd.value) {
-            case FORWARD: forward(motor1, motor2, 255); break;
-            case BACKWARD: back(motor1, motor2, 255); break;
-            case LEFT: right(motor1, motor2, 255); break;       //reversed 
-            case RIGHT: left(motor1, motor2, 255); break;
-            case STOP: brake(motor1, motor2); break; 
-            }
+// button inputs from controller mapped to motor movement
+switch(cmd.value) {
+case FORWARD: forward(motor1, motor2, 255); break;
+case BACKWARD: back(motor1, motor2, 255); break;
+case LEFT: right(motor1, motor2, 255); break;       //reversed 
+case RIGHT: left(motor1, motor2, 255); break;
+case STOP: brake(motor1, motor2); break; 
+}
 
-            }
+}
             </code></pre>
                 <p>After I was satisfied with the code, I began to plan the initial layout of the first prototype using cardboard.</p>
                 <img src="media/2_wheel_robot/2_wheel_early_layout.jpg" alt="bottom_layout" style="height: 30%; width: 30%;">
